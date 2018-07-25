@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" type = "text/css" href = "css/main.css"/>
     <title>Reddit Job Finder</title>
 </head>
 <body>
-      <h1> Reddit Job Finder </h1>
-  <h3> Find job opportunities on reddit
-  </h3>
+<div class = "main">
+    <h1> Junter </h1>
+  <h2> Find job opportunities on Reddit
+  </h2>
   <form action = "/search" method = "GET">
     <label> Enter your keywords seperated by comma </label> <br/>
-    <input placeholder = "enter your keywords seperated by comma" name = "q"/>
+      <div class="field">
+  <div class="control">
+    <input class="input is-primary" type="text" placeholder="Primary input" name = "q">
+  </div>
+</div>
+    <button class = "btn main-btn" type = "submit">Search</button>
   </form>
+
+</div>
 </body>
 </html>

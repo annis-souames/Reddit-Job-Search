@@ -2,15 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>
+    <link rel="stylesheet" type = "text/css" href = "{{ url_for('static',filename='css/results.css') }}"/>
+
     <title>Results</title>
 </head>
 <body>
 
-    {% for post in post_list %}
-    <h3><a href = {{post.url}}>{{post.title}}</a></h3>
+    <nav class="navbar is-danger">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
 
-    {%endfor%}
+        <h1 class = "title">Junter</h1>
+
+    </a>
+    <div class="navbar-burger burger" data-target="navMenuColordanger-example">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navMenuColordanger-example" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+         <form action = "/search" method = "GET">
+    <label> Enter your keywords seperated by comma </label> <br/>
+      <div class="field">
+  <div class="control">
+    <input class="input is-primary" type="text" placeholder="Primary input" name = "q">
+  </div>
+</div>
+    <button class = "btn main-btn" type = "submit">Search</button>
+  </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class = "container">
+    <h1 class = "title"> Results :</h1>
+    <h2 class = "sub"> {{post_list|length}} Jobs Found</h2>
+    <div class = "columns is-multiline">
+        {% for post in post_list %}
+            <div class="card column is-one-quarter">
+  <div class="card-content">
+
+      <a href = {{post.url}}>
+      <p>
+        <b>{{post.title}}</b>
+    </p>
+      </a>
+      <hr>
+      <time >{{post.created_utc|date}}</time>
+
+  </div>
+
+</div>
+        {%endfor%}
+    </div>
+</div>
+
+
+<!-- jQuery library and fancybox -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+
+
+
+
 
 
 </body>
 </html>
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"/>
+    <title></title>
+</head>
+<body>
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+.full{
+          position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+
+                background: #8A2387;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-size : cover;
+    color: white;
+}
+
+h1{
+    font-family: 'Ubuntu' , sans-serif;
+    font-size: 30px;
+    color: white;
+
+}
+
+.button{
+    height: 60px;
+    background-color: #6c5ce7;
+    color: white;
+    border: None;
+    border-radius: 8px;
+    padding-right : 25px;
+    padding-left: 25px;
+}
+.button:hover{
+    background-color: #0984e3;
+    color: white;
+}
+
+
+
+
+</style>
+<div class = "container">
+
+<h1>Find Exclusive Jobs &amp; Gigs from Reddit, Craiglist, Twitter, Facebook and more</h1>
+    <h2>Join our special list to be the first one to find these jobs, only {{places_left}}  </h2>
+    <p> <b>What's in it for me ? </b> By joining our list, you will be the first one to have access to Junter search engine, you can find great gigs quickly</p>
+
+    <form>
+<div class = "columns is-multiline">
+<div class="field column is-half">
+  <label class="label">Name</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Example: John Doe" name = "name">
+  </div>
+</div>
+
+    <div class="field column is-half">
+  <label class="label">Email:</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Example: john.doe@test.com" name = "email">
+      <small>We hate spam and we promise to never spam you</small>
+  </div>
+</div>
+
+
+
+</div>
+    </form>
+     <a class = "button button-lg" id = "send">Send Me Opportunities</a>
+</div>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script >
+    $(document).ready(function(){
+
+   $("#send").click(function (event) {
+       console.log($("form").serialize())
+      $.post("/new-adopter",$("form").serialize(),function (data) {
+         alert(data)
+      })
+   })
+
+});
+</script >
+</body>
+</html>

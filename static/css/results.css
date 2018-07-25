@@ -1,0 +1,21 @@
+.card{
+    margin: 25px;
+}
+.card time{
+    color: #E94057;
+}
+
+.title{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.sub{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+
+}
