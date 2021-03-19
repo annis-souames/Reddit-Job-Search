@@ -4,7 +4,7 @@ click==6.7
 Flask==1.0.2
 idna==2.7
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==1.0
 praw==5.4.0
 prawcore==0.14.0
